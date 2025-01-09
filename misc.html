@@ -205,6 +205,44 @@
         .carousel-controls button:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+        /* Achievements Section */
+        
+        .achievements-section .achievements-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .achievements-section .achievement-item {
+            background-color: #252525;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .achievements-section .achievement-item h5 {
+            font-size: 1.75rem;
+            color: #a8d5ba;
+            margin-bottom: 10px;
+        }
+        
+        .achievements-section .achievement-item p {
+            font-size: 1.1rem;
+            color: #d3d3d3;
+        }
+        /* Photography Section: Carousel Captions */
+        
+        .interest-slide .caption {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
         
         @keyframes fadeIn {
             from {
@@ -256,7 +294,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./home.html"><i class="fas fa-home"></i> Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="./about.html"><i class="fas fa-user"></i> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="./about.html#projects"><i class="fas fa-briefcase"></i> Project</a></li>
                     <li class="nav-item"><a class="nav-link" href="./resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
@@ -300,6 +338,7 @@
             </div>
         </div>
     </section>
+    <!-- Interests Section -->
     <section class="interests-section">
         <div class="container">
             <h2 class="interests-heading">Interests</h2>
@@ -307,31 +346,19 @@
             <div class="carousel-wrapper">
                 <div class="carousel">
                     <div class="interest-slide">
-                        <img src="wo1.jpeg" alt="Photography">
+                        <img src="wo1.jpeg" alt="Photography 1">
                     </div>
-
                     <div class="interest-slide">
-                        <img src="wo2.jpeg" alt="Travel">
+                        <img src="wo2.jpeg" alt="Photography 2">
                     </div>
-
                     <div class="interest-slide">
-                        <img src="wo3.jpeg" alt="Art">
+                        <img src="wo3.jpeg" alt="Photography 3">
                     </div>
-
                     <div class="interest-slide">
-                        <img src="wo4.jpeg" alt="Art">
+                        <img src="wo4.jpeg" alt="Photography 4">
                     </div>
-
                     <div class="interest-slide">
-                        <img src="wo5.jpeg" alt="Art">
-                    </div>
-
-                    <div class="interest-slide">
-                        <img src="wo6.jpeg" alt="Art">
-                    </div>
-
-                    <div class="interest-slide">
-                        <img src="wo7.jpeg" alt="Art">
+                        <img src="wo5.jpeg" alt="Photography 5">
                     </div>
                 </div>
                 <div class="carousel-controls">
@@ -342,27 +369,23 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
     <!-- Achievements Section -->
     <section class="achievements-section">
         <div class="container">
             <h2 class="achievements-heading">Achievements</h2>
-            <div class="achievements-gallery">
-                <img src="achievement1.jpg" alt="Gold Medal" title="Gold Medal - Winner of Urdu Debating championship, Nazaria Pakistan Trust, Lahore.">
-                <img src="achievement2.jpg" alt="Silver Medal" title="Silver Medal - Secured the second highest score in ISMO Math's Olympiad.">
-                <!-- Add more images as needed -->
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <h5>Gold Medal</h5>
+                    <p>Winner of Urdu Debating Championship, Nazaria Pakistan Trust, Lahore.</p>
+                </div>
+                <div class="achievement-item">
+                    <h5>Silver Medal</h5>
+                    <p>Secured the second highest score in ISMO Math's Olympiad.</p>
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
