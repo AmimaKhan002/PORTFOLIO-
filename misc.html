@@ -123,7 +123,7 @@
         
         .carousel-wrapper {
             position: relative;
-            max-width: 80%;
+            max-width: 90%;
             margin: 0 auto;
             overflow: hidden;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
@@ -138,13 +138,22 @@
         .interest-slide {
             min-width: 100%;
             text-align: center;
+            padding: 10px;
         }
         
         .interest-slide img {
-            width: 90%;
+            width: 100%;
+            max-width: 300px;
             height: auto;
             object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .interest-slide img:hover {
+            transform: scale(1.05);
         }
         
         .carousel-controls {
@@ -171,31 +180,51 @@
         }
         /* Achievements Section */
         
-        .achievements-section .achievements-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+        .achievements-section {
+            background-color: #1b1b1b;
+            color: #fff;
+            padding: 60px 0;
+            border-top: 3px solid #82b392;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
         }
         
-        .achievements-section .achievement-item {
+        .achievements-heading {
+            font-size: 2.5rem;
+            color: #a8d5ba;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .achievements-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .achievement-item {
             background-color: #252525;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             width: 100%;
-            max-width: 600px;
+            max-width: 400px;
+            margin: 15px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .achievements-section .achievement-item h5 {
+        .achievement-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        
+        .achievement-item h5 {
             font-size: 1.75rem;
             color: #a8d5ba;
             margin-bottom: 10px;
         }
         
-        .achievements-section .achievement-item p {
-            font-size: 1.1rem;
+        .achievement-item p {
             color: #d3d3d3;
         }
         
@@ -225,17 +254,6 @@
         
         .footer a:hover {
             color: #82b392;
-        }
-        /* Animations
-    */
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
     </style>
 </head>
@@ -293,6 +311,7 @@
             </div>
         </div>
     </section>
+
     <!-- Interests Section -->
     <section class="interests-section">
         <div class="container">
@@ -317,8 +336,8 @@
                     </div>
                 </div>
                 <div class="carousel-controls">
-                    <button class="prev">&#10094;</button>
-                    <button class="next">&#10095;</button>
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
                 </div>
             </div>
         </div>
@@ -331,16 +350,15 @@
             <div class="achievements-list">
                 <div class="achievement-item">
                     <h5>Gold Medal</h5>
-                    <p>Winner of Urdu Debating Championship, Nazaria Pakistan Trust, Lahore.</p>
+                    <p>Winner of Urdu Debating championship, Nazaria Pakistan Trust,Lahore</p>
                 </div>
                 <div class="achievement-item">
                     <h5>Silver Medal</h5>
-                    <p>Secured the second highest score in ISMO Math's Olympiad.</p>
+                    <p>Secured the second highest score in ISMO Math's Olympiad</p>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -354,33 +372,33 @@
         </div>
     </footer>
 
-    <!-- Optional: Include Bootstrap JS and Font Awesome JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.interest-slide');
-    const totalSlides = slides.length;
 
-    function showSlide(index) {
-        const carousel = document.querySelector('.carousel');
-        if (index >= totalSlides) {
-            currentSlide = 0;
-        } else if (index < 0) {
-            currentSlide = totalSlides - 1;
-        } else {
-            currentSlide = index;
+    <script>
+        // Simple Carousel Controls Script
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.interest-slide');
+        const totalSlides = slides.length;
+
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        function updateCarousel() {
+            const offset = -100 * currentIndex;
+            document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
         }
-        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
 
-    document.querySelector('.prev').addEventListener('click', () => {
-        showSlide(currentSlide - 1);
-    });
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+            updateCarousel();
+        });
 
-    document.querySelector('.next').addEventListener('click', () => {
-        showSlide(currentSlide + 1);
-    });
-</script>
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+    </script>
+</body>
 
 </html>
+
