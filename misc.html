@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amima Khan - Misc</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Navbar styling */
+        
+        .navbar {
+            background: linear-gradient(135deg, #2a2a2a, #3b3b3b);
+            border-bottom: 3px solid #82b392;
+        }
+        
+        .navbar-nav .nav-link,
+        .github-link {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover,
+        .github-link:hover {
+            color: #a8d5ba;
+        }
+        
+        .navbar-nav {
+            margin: 0 auto;
+        }
+        /* Volunteer Experience Section */
+        
+        .volunteer-section {
+            background-color: #1b1b1b;
+            color: #fff;
+            padding: 60px 0;
+            border-top: 3px solid #82b392;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .volunteer-heading {
+            font-size: 2.5rem;
+            color: #a8d5ba;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .volunteer-card {
+            background-color: #252525;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            margin: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .volunteer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        
+        .volunteer-card h5 {
+            font-size: 1.5rem;
+            color: #a8d5ba;
+            margin-bottom: 10px;
+        }
+        
+        .volunteer-card p {
+            color: #d3d3d3;
+            margin-bottom: 15px;
+        }
+        
+        .work-links {
+            margin-top: 10px;
+        }
+        
+        .work-links a {
+            color: #82b392;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: color 0.3s;
+        }
+        
+        .work-links a:hover {
+            color: #a8d5ba;
+        }
+        /* Achievements Section */
+        
+        .achievements-section {
+            background-color: #1b1b1b;
+            color: #fff;
+            padding: 60px 0;
+            border-top: 3px solid #82b392;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .achievements-heading {
+            font-size: 2.5rem;
+            color: #a8d5ba;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .achievements-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .achievements-gallery img {
+            width: 100%;
+            max-width: 200px;
+            /* Adjust the size of images */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s;
+        }
+        
+        .achievements-gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Interests Section */
+        
+        .interests-section {
+            background-color: #1b1b1b;
+            color: #fff;
+            padding: 60px 0;
+            border-top: 3px solid #82b392;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .interests-heading {
+            font-size: 2.5rem;
+            color: #a8d5ba;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .photography-heading {
+            font-size: 2rem;
+            color: #82b392;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .carousel-wrapper {
+            position: relative;
+            max-width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .interest-slide {
+            min-width: 100%;
+            text-align: center;
+        }
+        
+        .interest-slide img {
+            width: 90%;
+            height: auto;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Footer styling */
+        
+        .footer {
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 20px 0;
+            border-top: 3px solid #82b392;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #a8d5ba;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: #82b392;
+        }
+        /* Animations
+    */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="./home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html#projects"><i class="fas fa-briefcase"></i> Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./misc.html"><i class="fas fa-ellipsis-h"></i> Misc</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Volunteer Experience Section -->
+    <section class="volunteer-section">
+        <div class="container">
+            <h2 class="volunteer-heading">Volunteer Experience</h2>
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="volunteer-card">
+                    <h5>Vice President at Sports Society</h5>
+                    <p>University of the Punjab, Lahore.</p>
+                    <div class="work-links">
+                        <span>Media Related Work:</span>
+                        <a href="https://www.instagram.com/reel/C37pj4ZoyOd/?utm_source=ig_web_copy_link">Using Capcut</a>
+                        <a href="https://www.instagram.com/reel/C22W8oHJykC/?utm_source=ig_web_copy_link">Using Adobe Premier</a>
+                    </div>
+                </div>
+                <div class="volunteer-card">
+                    <h5>Marketing Lead at Ibn-e-Akram</h5>
+                    <p>An organization currently working for providing necessities to more than 100 families.</p>
+                    <div class="work-links">
+                        <span>Visit Website</span>
+                        <a href="https://www.ibneakramwf.org/">Click Here</a>
+                    </div>
+                </div>
+                <div class="volunteer-card">
+                    <h5>Graphic Designer at NexSkill</h5>
+                    <p>Arfa Karim Tower, Lahore.</p>
+                    <div class="work-links">
+                        <span>Work:</span>
+                        <a href="https://www.canva.com/design/DAF52PFOVww/KfX1bJ1ByUlJ999bzawRCQ/edit?utm_content=DAF52PFOVww&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">WORKPOD presentation using CANVA</a>
+                        <a href="https://www.canva.com/design/DAF7XBanXc0/Vjx_MYX1ST1fHUETCbnnsg/edit?utm_content=DAF7XBanXc0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Graphic Designer Hiring Poster</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="interests-section">
+        <div class="container">
+            <h2 class="interests-heading">Interests</h2>
+            <h3 class="photography-heading">Photography</h3>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <div class="interest-slide">
+                        <img src="wo1.jpeg" alt="Photography">
+                    </div>
+
+                    <div class="interest-slide">
+                        <img src="wo2.jpeg" alt="Travel">
+                    </div>
+
+                    <div class="interest-slide">
+                        <img src="wo3.jpeg" alt="Art">
+                    </div>
+
+                    <div class="interest-slide">
+                        <img src="wo4.jpeg" alt="Art">
+                    </div>
+
+                    <div class="interest-slide">
+                        <img src="wo5.jpeg" alt="Art">
+                    </div>
+
+                    <div class="interest-slide">
+                        <img src="wo6.jpeg" alt="Art">
+                    </div>
+
+                    <div class="interest-slide">
+                        <img src="wo7.jpeg" alt="Art">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <div class="container">
+            <h2 class="achievements-heading">Achievements</h2>
+            <div class="achievements-gallery">
+                <img src="achievement1.jpg" alt="Gold Medal" title="Gold Medal - Winner of Urdu Debating championship, Nazaria Pakistan Trust, Lahore.">
+                <img src="achievement2.jpg" alt="Silver Medal" title="Silver Medal - Secured the second highest score in ISMO Math's Olympiad.">
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed by Amima Khan | © 2024 All Rights Reserved</p>
+            <div class="social-links">
+                <a href="https://github.com/AmimaKhan002" class="github-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/AmimaKhan002" class="github-link" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/amima-khan-9812741aa/" class="github-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional: Include Bootstrap JS and Font Awesome JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.interest-slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        const carousel = document.querySelector('.carousel');
+        if (index >= totalSlides) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = totalSlides - 1;
+        } else {
+            currentSlide = index;
+        }
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+    });
+</script>
+
+</html>

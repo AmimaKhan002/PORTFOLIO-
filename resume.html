@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amima Khan - Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Navbar styling with black and grey theme */
+        
+        .navbar {
+            background: linear-gradient(135deg, #2a2a2a, #3b3b3b);
+            border-bottom: 3px solid #82b392;
+        }
+        
+        .navbar-nav .nav-link,
+        .github-link {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover,
+        .github-link:hover {
+            color: #a8d5ba;
+        }
+        
+        .navbar-nav {
+            margin: 0 auto;
+        }
+        /* Resume section styling */
+        
+        .resume-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 40px 0;
+            background-color: #1b1b1b;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .resume-image {
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+        
+        .resume-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.6);
+        }
+        /* Footer styling */
+        
+        .footer {
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 20px 0;
+            border-top: 3px solid #82b392;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #a8d5ba;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #82b392;
+        }
+        /* Animations */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="./home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html#projects "><i class="fas fa-briefcase "></i> Project</a></li>
+                    <li class="nav-item "><a class="nav-link " href="resume.html"><i class="fas fa-file-alt "></i> Resume</a></li>
+                    <li class="nav-item "><a class="nav-link " href="misc.html"><i class="fas fa-ellipsis-h "></i> Misc</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resume Section -->
+    <section class="resume-section ">
+        <img src="1.jpg " alt="Amima Khan 's Resume" class="resume-image">
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed by Amima Khan | © 2024 All Rights Reserved</p>
+            <div class="social-links">
+                <a href="https://github.com/AmimaKhan002" class="github-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/AmimaKhan002" class="github-link" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/amima-khan-9812741aa/" class="github-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional: Include Bootstrap JS and Font Awesome JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
