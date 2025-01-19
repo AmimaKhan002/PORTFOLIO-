@@ -30,6 +30,10 @@
             color: #a8d5ba;
         }
 
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
         .section {
             background-color: #1b1b1b;
             color: #fff;
@@ -46,29 +50,38 @@
             animation: fadeIn 1.5s ease-in-out;
         }
 
+        .container {
+            max-width: 800px;
+        }
+
+        /* Custom styles for the intro section */
         .intro-section {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            padding: 30px 15px;
+            justify-content: center;
+            padding: 50px;
             background: linear-gradient(135deg, #1b1b1b, #3b3b3b);
             color: #fff;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .intro-text {
             flex: 1;
+            text-align: center;
             padding: 20px;
+            min-width: 300px;
         }
 
         .intro-text h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
             color: #a8d5ba;
             margin-bottom: 15px;
         }
 
         .intro-text p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #d3d3d3;
         }
 
@@ -86,6 +99,7 @@
             color: #fff;
         }
 
+        /* Read More Button Styling */
         .read-more-btn {
             margin-top: 20px;
             padding: 10px 20px;
@@ -103,12 +117,23 @@
             color: #fff;
         }
 
-        .profile-picture {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
+        /* Profile picture styling */
+      /* Profile picture styling with adjusted position */
+.profile-picture {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-width: 300px;
+    margin-top: -30px; /* Move the picture upwards */
+}
+
+/* Additional adjustment for intro-section spacing if needed */
+.intro-section {
+    padding: 30px; /* Reduced padding to balance the layout */
+}
+
 
         .profile-picture img {
             width: 100%;
@@ -117,8 +142,10 @@
             border-radius: 50%;
             border: 4px solid #a8d5ba;
             object-fit: cover;
+            animation: zoomIn 2s ease-in-out;
         }
 
+        /* Footer styling */
         .footer {
             background: #2a2a2a;
             color: #d3d3d3;
@@ -141,21 +168,24 @@
             color: #fff;
         }
 
-        @media (max-width: 768px) {
-            .intro-text h1 {
-                font-size: 2rem;
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
             }
-
-            .intro-text p {
-                font-size: 0.9rem;
+            to {
+                opacity: 1;
             }
+        }
 
-            .read-more-btn {
-                font-size: 0.9rem;
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
             }
-
-            .footer {
-                flex-direction: column;
+            to {
+                transform: scale(1);
+                opacity: 1;
             }
         }
     </style>
@@ -182,18 +212,21 @@
 
     <!-- Intro Section -->
     <section class="intro-section">
-        <div class="profile-picture">
-            <img src="intro1.JPG" alt="Amima Khan">
-        </div>
+        <!-- Intro Text -->
         <div class="intro-text">
             <h1>Amima Khan</h1>
-            <p>"A hard-working and self-motivated individual, I am a debater at heart and a coder by mind..."</p>
+            <p>"A hard-working and self-motivated individual, I am a debater at heart and a coder by mind. Driven by a passion for continuous growth, I am eager to explore new opportunities that will not only elevate my technical skills but also contribute to my personal development. As an enthusiastic self-starter with strong leadership abilities, I bring a proactive approach to every challenge, blending creativity with analytical thinking to make a meaningful impact."</p>
             <a href="./about.html" class="read-more-btn">Read More</a>
             <div class="social-links">
                 <a href="https://github.com/AmimaKhan002" class="github-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://twitter.com/AmimaKhan002" class="github-link" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com/in/amima-khan-9812741aa/" class="github-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
+        </div>
+
+        <!-- Profile Picture -->
+        <div class="profile-picture">
+            <img src="intro1.JPG" alt="Amima Khan">
         </div>
     </section>
 
@@ -210,9 +243,10 @@
         </div>
     </footer>
 
-    <!-- Optional Bootstrap JS -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
 
