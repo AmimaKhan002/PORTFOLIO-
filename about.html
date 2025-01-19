@@ -11,11 +11,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         /* Navbar styling */
+        
         .navbar {
             background: linear-gradient(135deg, #2a2a2a, #3b3b3b);
             border-bottom: 3px solid #82b392;
         }
-
+        
         .navbar-nav .nav-link,
         .github-link {
             color: #fff;
@@ -23,86 +24,117 @@
             margin: 0 10px;
             transition: color 0.3s ease;
         }
-
+        
         .navbar-nav .nav-link.active,
         .navbar-nav .nav-link:hover,
         .github-link:hover {
             color: #a8d5ba;
         }
-
+        
+        .navbar-nav {
+            margin: 0 auto;
+        }
         /* Page theme styling */
+        
         body {
             background-color: #f4f4f9;
             color: #333;
             font-family: Arial, sans-serif;
         }
-
+        
         .section {
             background-color: #1b1b1b;
             color: #fff;
-            padding: 60px 20px;
+            padding: 60px 0;
             border-top: 3px solid #82b392;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
         }
-
+        
         .section-heading {
             font-size: 2.5rem;
             color: #a8d5ba;
             text-align: center;
             margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
         }
-
+        
+        .container {
+            max-width: 800px;
+        }
+        /* Skill and tool icons styling */
+        
         .skills-container,
         .tools-container {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-wrap: nowrap;
+            gap: 40px;
             padding-top: 20px;
         }
-
+        
         .icon,
         .tool-card img {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             transition: transform 0.3s ease, filter 0.3s ease;
             filter: grayscale(100%);
         }
-
+        
         .icon:hover,
         .tool-card img:hover {
             transform: scale(1.1);
             filter: grayscale(0);
         }
-
+        
         .tool-card {
             background-color: #252525;
             border-radius: 8px;
-            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            width: 120px;
             text-align: center;
-            width: 100px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
         }
-
+        
+        .tool-card p {
+            color: #d3d3d3;
+            font-size: 1rem;
+            margin: 0;
+        }
+        /* Project card styling */
+        
         .project-card {
             background-color: #252525;
             border-radius: 8px;
             padding: 20px;
-            margin-bottom: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
         }
-
+        
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.5);
         }
-
+        
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #a8d5ba;
+            margin-bottom: 10px;
+        }
+        
+        .project-card p {
+            font-size: 1rem;
+            color: #d3d3d3;
+            line-height: 1.6;
+        }
         /* Footer styling */
+        
         .footer {
             background-color: #2a2a2a;
             color: #fff;
@@ -110,51 +142,45 @@
             border-top: 3px solid #82b392;
             text-align: center;
         }
-
+        
         .footer a {
             color: #a8d5ba;
             margin: 0 10px;
             transition: color 0.3s ease;
         }
-
+        
         .footer a:hover {
             color: #82b392;
         }
-
-        /* Media Queries */
+        
         @media (max-width: 768px) {
             .section-heading {
                 font-size: 2rem;
             }
-
             .icon,
             .tool-card img {
                 width: 50px;
                 height: 50px;
             }
-
             .project-card {
                 padding: 15px;
             }
-
             .navbar-nav .nav-link {
                 font-size: 0.9rem;
                 margin: 5px 0;
             }
-
             .skills-container,
             .tools-container {
                 gap: 10px;
             }
         }
-
+        
         @media (max-width: 576px) {
             .skills-container,
             .tools-container {
                 flex-direction: column;
                 align-items: center;
             }
-
             .tool-card {
                 width: 90px;
             }
@@ -163,9 +189,10 @@
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
+        <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -183,19 +210,95 @@
 
     <!-- About Section -->
     <section class="section">
-        <div class="container-fluid">
+        <div class="container">
             <h2 class="section-heading">About Me</h2>
-            <p>I’m Amima Khan, a senior year Computer Science student at PUCIT, Lahore...</p>
+            <div class="about-container">
+                <p>I’m Amima Khan, a senior year Computer Science student at PUCIT, Lahore. I am passionate about using my skills and interests to make a meaningful impact on both the tech industry and society.</p>
+                <ul class="about-list">
+                    <li> Pursuing a Bachelor's in Computer Science from PUCIT, Lahore.</li>
+                    <li> Strong focus on web development, creating user-centered digital experiences.</li>
+                    <li> A deep love for photography, capturing moments that tell stories.</li>
+                    <li>Actively involved in charity organizations, striving to make a difference.</li>
+                    <li> Driven by technology to solve real-life challenges, with a passion for continuous learning.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-heading">What Am I Working On?</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    <h3><i class="fas fa-warehouse"></i> Automated Co-Baked</h3>
+                    <p>"Automated Co-Baked" is an advanced inventory management system tailored for bakery operations. This system streamlines inventory tracking, order management, and supply chain logistics, providing real-time insights to help bakery owners
+                        optimize resources and reduce waste.</p>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-gem"></i> Wed-Wiz</h3>
+                    <p>"Wed-Wiz" is a web application featuring 3D visualization of decor setups for events. It allows users to explore and customize event decor layouts in a 3D environment, providing an immersive planning experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Skillset Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-heading">Professional Skillset</h2>
+            <div class="skills-container">
+                <img src="https://img.icons8.com/color/80/000000/python.png" alt="Python" class="icon">
+                <img src="https://img.icons8.com/color/80/000000/html-5.png" alt="HTML" class="icon">
+                <img src="https://img.icons8.com/color/80/000000/javascript.png" alt="JavaScript" class="icon">
+                <img src="https://img.icons8.com/color/80/000000/nodejs.png" alt="Node.js" class="icon">
+                <img src="https://img.icons8.com/color/80/000000/c-plus-plus-logo.png" alt="C++" class="icon">
+                <img src="https://img.icons8.com/color/80/000000/bootstrap.png" alt="Bootstrap" class="icon">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools I Work On Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-heading">Tools I Work On</h2>
+            <div class="tools-container">
+                <div class="tool-card"><img src="https://img.icons8.com/color/80/000000/visual-studio--v2.png" alt="Visual Studio">
+                    <p>Visual Studio</p>
+                </div>
+                <div class="tool-card"><img src="https://img.icons8.com/fluency/80/000000/jupyter.png" alt="Jupyter">
+                    <p>Jupyter</p>
+                </div>
+                <div class="tool-card"><img src="https://img.icons8.com/dusk/80/000000/postman-api.png" alt="Postman">
+                    <p>Postman</p>
+                </div>
+                <div class="tool-card"><img src="https://img.icons8.com/color/80/000000/adobe-lightroom.png" alt="Lightroom">
+                    <p>Lightroom</p>
+                </div>
+                <div class="tool-card"><img src="https://img.icons8.com/color/80/000000/adobe-illustrator.png" alt="Illustrator">
+                    <p>Illustrator</p>
+                </div>
+                <div class="tool-card"><img src="https://img.icons8.com/color/80/000000/adobe-photoshop.png" alt="Photoshop">
+                    <p>Photoshop</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>Designed by Amima Khan | © 2024 All Rights Reserved</p>
+        <div class="container">
+            <p>Designed by Amima Khan | © 2024 All Rights Reserved</p>
+            <div class="social-links">
+                <a href="https://github.com/AmimaKhan002" class="github-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/AmimaKhan002" class="github-link" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/amima-khan-9812741aa/" class="github-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
 
+    <!-- Optional: Include Bootstrap JS and Font Awesome JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
-
