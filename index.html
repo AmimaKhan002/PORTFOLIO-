@@ -54,11 +54,12 @@
             max-width: 800px;
         }
 
-        /* Intro Section Styling */
+        /* Custom styles for the intro section */
         .intro-section {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
+            justify-content: center;
             padding: 50px;
             background: linear-gradient(135deg, #1b1b1b, #3b3b3b);
             color: #fff;
@@ -69,17 +70,18 @@
             flex: 1;
             text-align: center;
             padding: 20px;
+            min-width: 300px;
         }
 
         .intro-text h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
             color: #a8d5ba;
             margin-bottom: 15px;
         }
 
         .intro-text p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #d3d3d3;
         }
 
@@ -115,12 +117,14 @@
             color: #fff;
         }
 
-        /* Profile Picture Styling */
+        /* Profile picture styling */
         .profile-picture {
             flex: 1;
             display: flex;
             justify-content: center;
+            align-items: center;
             padding: 20px;
+            min-width: 300px;
         }
 
         .profile-picture img {
@@ -133,7 +137,7 @@
             animation: zoomIn 2s ease-in-out;
         }
 
-        /* Footer Styling */
+        /* Footer styling */
         .footer {
             background: #2a2a2a;
             color: #d3d3d3;
@@ -161,7 +165,6 @@
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
@@ -172,7 +175,6 @@
                 transform: scale(0.8);
                 opacity: 0;
             }
-
             to {
                 transform: scale(1);
                 opacity: 1;
@@ -182,53 +184,35 @@
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="./home.html"><i class="fas fa-home"></i> Home</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="./about.html"><i class="fas fa-user"></i> About</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="./about.html#projects"><i class="fas fa-briefcase"></i>
-                            Project</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./resume.html"><i class="fas fa-file-alt"></i>
-                            Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/portfolio/misc.html"><i
-                                class="fas fa-ellipsis-h"></i> Misc</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html#projects"><i class="fas fa-briefcase"></i> Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/portfolio/misc.html"><i class="fas fa-ellipsis-h"></i> Misc</a></li>
                 </ul>
-
             </div>
         </div>
     </nav>
-
 
     <!-- Intro Section -->
     <section class="intro-section">
         <!-- Intro Text -->
         <div class="intro-text">
             <h1>Amima Khan</h1>
-            <p>"A hard-working and self-motivated individual, I am a debater at heart and a coder by mind. Driven by a
-                passion for continuous growth, I am eager to explore new opportunities that will not only elevate my
-                technical skills but also contribute to my personal development. As an enthusiastic self-starter with
-                strong leadership abilities, I bring a proactive approach to every challenge, blending creativity with
-                analytical thinking to make a meaningful impact."</p>
-            <!-- Read More Button -->
+            <p>"A hard-working and self-motivated individual, I am a debater at heart and a coder by mind. Driven by a passion for continuous growth, I am eager to explore new opportunities that will not only elevate my technical skills but also contribute to my personal development. As an enthusiastic self-starter with strong leadership abilities, I bring a proactive approach to every challenge, blending creativity with analytical thinking to make a meaningful impact."</p>
             <a href="./about.html" class="read-more-btn">Read More</a>
-            <!-- Social Links -->
             <div class="social-links">
-                <a href="https://github.com/AmimaKhan002" class="github-link" target="_blank" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://twitter.com/AmimaKhan002" class="github-link" target="_blank"
-                    aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/amima-khan-9812741aa/" class="github-link" target="_blank"
-                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/AmimaKhan002" class="github-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/AmimaKhan002" class="github-link" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/amima-khan-9812741aa/" class="github-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
 
@@ -244,17 +228,14 @@
             <div>Designed by Amima Khan</div>
             <div>&copy; 2024 All Rights Reserved</div>
             <div class="social-links">
-                <a href="https://github.com/AmimaKhan002" class="github-link" target="_blank" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://twitter.com/AmimaKhan002" class="github-link" target="_blank" aria-label="Twitter"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/amima-khan-9812741aa/" class="github-link" target="_blank"
-                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/AmimaKhan002" class="github-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/AmimaKhan002" class="github-link" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/amima-khan-9812741aa/" class="github-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- Optional: Include Bootstrap JS and Font Awesome JS -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
